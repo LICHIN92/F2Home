@@ -10,10 +10,11 @@ const View = () => {
     const { item } = useParams()
     const [data, setData] = useState([])
     const [wait, setWait] = useState(true)
+    const apiUrl = import.meta.env.VITE_API_URL;
     useEffect(() => {
         const getItem = async () => {
             try {
-                const res = await axios.get(`http://localhost:3000/view/${item}`)
+                const res = await axios.get(`${apiUrl}/view/${item}`)
                 setWait(false)
 
                 console.log(res.data);
