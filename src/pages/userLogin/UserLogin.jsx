@@ -4,13 +4,16 @@ import Inputz from '../../components/input/Inputz'
 import BButton from '../../components/Button/BButton'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import { jwtDecode } from 'jwt-decode'
+import { setUserData } from '../../redux/userSlice'
+import { useDispatch } from 'react-redux'
 const UserLogin = () => {
   const [formData, setFormData] = useState({});
   const [loginData, setLoginData] = useState({});
   const [isLogin, setLogin] = useState(true)
   const navigate = useNavigate();
- const apiUrl = import.meta.env.VITE_API_URL;
-
+  const apiUrl = import.meta.env.VITE_API_URL;
+const dispatch=useDispatch()
   const goback = () => {
     console.log(window.history.length)
   }
@@ -26,7 +29,11 @@ const UserLogin = () => {
 
   const reduxfunctions = async () => {
     const user = localStorage.getItem('user')
-      }
+          dispatch(setUserData(jwtDecode(user))) // ✅ correctly updates Redux
+    
+    navigate(-1, { replace: true })
+
+  }
 
   const LoginSubmit = async (e) => {
     e.preventDefault()
@@ -36,7 +43,6 @@ const UserLogin = () => {
       alert(response.data.message)
       localStorage.setItem('user', response.data.token)
       reduxfunctions()
-      navigate(-1, { replace: true })
     } catch (error) {
       console.log(error.response.data);
 
@@ -51,8 +57,8 @@ const UserLogin = () => {
       const response = await axios.post(`${apiUrl}/user`, formData);
       console.log(response);
       alert(response.data.message)
-      localStorage.setItem('uses', response.data.token)
-      navigate(-1, { replace: true })
+      localStorage.setItem('user', response.data.token)
+      reduxfunctions()
     } catch (error) {
       console.log(error.response.data);
 

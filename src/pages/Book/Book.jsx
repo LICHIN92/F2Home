@@ -84,7 +84,7 @@ const Book = () => {
 
             {book && (user ?
                 (isAddress ?
-                    <ConfirmBooking selectedQuantity={quantity} Price={calculatePrice() }
+                    <ConfirmBooking selectedQuantity={quantity} Price={calculatePrice()}
                         cancel={setBook} image={image} Id={_id} refresh={setRefresh} />
                     : <AddAddress cancel={setBook} />)
                 :
