@@ -13,7 +13,7 @@ const UserLogin = () => {
   const [isLogin, setLogin] = useState(true)
   const navigate = useNavigate();
   const apiUrl = import.meta.env.VITE_API_URL;
-const dispatch=useDispatch()
+  const dispatch = useDispatch()
   const goback = () => {
     console.log(window.history.length)
   }
@@ -29,8 +29,8 @@ const dispatch=useDispatch()
 
   const reduxfunctions = async () => {
     const user = localStorage.getItem('user')
-          dispatch(setUserData(jwtDecode(user))) // ✅ correctly updates Redux
-    
+    dispatch(setUserData(jwtDecode(user))) // ✅ correctly updates Redux
+
     navigate(-1, { replace: true })
 
   }
@@ -97,24 +97,23 @@ const dispatch=useDispatch()
             <>
               <div>
                 <Inputz label={'First Name'} name={'FirstName'} type={'text'}
-                  value={formData.FirstName}
-                  onchange={handleOnchange} />
+                  value={formData.FirstName} onchange={handleOnchange} required={true} />
               </div>
               <div>
                 <Inputz label={'Last Name'} name={'LastName'} type={'text'}
-                  value={formData.LastName} onchange={handleOnchange} />
+                  value={formData.LastName} onchange={handleOnchange} required={true} />
               </div>
               <div>
                 <Inputz label={'Mobile'} name={"Mobile"} type={'number'}
-                  value={formData.Mobile} onchange={handleOnchange} />
+                  value={formData.Mobile} onchange={handleOnchange} required={true} />
               </div>
               <div>
                 <Inputz label={"Password"} name={"Password"} type={'text'}
-                  value={formData.Password} onchange={handleOnchange} />
+                  value={formData.Password} onchange={handleOnchange} required={true} />
               </div>
               <div>
                 <Inputz label={"Confirm Password"} name={'ConfirmPassword'} type={'text'}
-                  value={formData.ConfirmPassword} onchange={handleOnchange} />
+                  value={formData.ConfirmPassword} onchange={handleOnchange} required={true} />
               </div>
             </>
         }

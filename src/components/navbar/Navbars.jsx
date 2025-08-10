@@ -7,21 +7,21 @@ import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 const Navbars = () => {
   const [menuOpen, setMenuOpen] = useState(false)
-  const navigate=useNavigate()
- useEffect(() => {
-  const handleResize = () => {
-    if (window.innerWidth > 700 && menuOpen) {
-      setMenuOpen(false);
-    }
-  };
+  const navigate = useNavigate()
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 700 && menuOpen) {
+        setMenuOpen(false);
+      }
+    };
 
-  window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResize);
 
-  // Run once in case user loads the page in a larger screen with menu open
-  handleResize();
+    // Run once in case user loads the page in a larger screen with menu open
+    handleResize();
 
-  return () => window.removeEventListener('resize', handleResize);
-}, [menuOpen]);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [menuOpen]);
 
   return (
     <div className="navbarContainer">
@@ -34,11 +34,11 @@ const Navbars = () => {
         }
       </button>
       <ul className={menuOpen ? 'menuActive' : ""}>
-  <li onClick={() => { setMenuOpen(false); navigate('/'); }}>Home</li>
-  <li onClick={() => { setMenuOpen(false); navigate('/about'); }}>About</li>
-  <li onClick={() => { setMenuOpen(false); navigate('/services'); }}>Services</li>
-  <li onClick={() => { setMenuOpen(false); navigate('/contact'); }}>Contact</li>
-</ul>
+        <li onClick={() => { setMenuOpen(false); navigate('/'); }}>Home</li>
+        <li onClick={() => { setMenuOpen(false); navigate('/about'); }}>About</li>
+        <li onClick={() => { setMenuOpen(false); navigate('/services'); }}>Services</li>
+        <li onClick={() => { setMenuOpen(false); navigate('/contact'); }}>Contact</li>
+      </ul>
 
     </div>
 

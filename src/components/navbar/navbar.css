@@ -92,25 +92,27 @@
   .navbarContainer ul.menuActive {
     display: flex;
     flex-direction: column;
-    padding-block: 10px;
+    padding-bottom: 50px;
     align-items: center;
     justify-content: center;
-    gap: 70px;
-    background-color: rgb(170, 158, 182);
+    gap: 60px;
+    background-color:#8A2BE2;
     color: white;
     width: 100vw;
-    height: 90vh;
+    height: 99vh;
     position: absolute;
     top: 80px;
     right: 0;
     animation: navmenu .5s ease-in-out;
-    position: fixed;
+    /* position: fixed; */
     z-index: 100;
     font-size: 20px;
   font-family:Merriweather;
 
   }
-
+ .navbarContainer ul.menuActive li{
+color: white;
+ }
   @keyframes navmenu {
     0% {
       transform: translateX(-500px);

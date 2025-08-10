@@ -5,7 +5,12 @@ import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 import { MdOutlineProductionQuantityLimits } from 'react-icons/md'
 import { LiaRupeeSignSolid } from 'react-icons/lia'
+import { useSelector } from 'react-redux'
+
 const View = () => {
+    const User = useSelector((state) => state.user?.user.User)
+    console.log(User);
+
     const navigate = useNavigate()
     const { item } = useParams()
     const [data, setData] = useState([])
@@ -29,6 +34,12 @@ const View = () => {
     return (
         <div className='veiw'>
             <h1>{item}</h1>
+            <div className='subitemAdd'>
+                {User &&
+                    (<MdOutlineProductionQuantityLimits onClick={() => { navigate(`/addproduct/${item}`) }} />
+                    )
+                }
+            </div>
             {
                 wait ? 'please wait...... '
                     :
@@ -40,18 +51,15 @@ const View = () => {
                                     <div className="item_Name">
                                         <h6>{file.Name}</h6>
                                         <h6>
-                                           <LiaRupeeSignSolid />
+                                            <LiaRupeeSignSolid />
 
                                             {file.Price} /-Kg
                                         </h6>
                                     </div>
                                 </div>
                             )))
-                            : ` No ${item} is not added`} 
+                            : ` No ${item} is not added`}
 
-                        <div className="view_card">
-                            <MdOutlineProductionQuantityLimits onClick={() => { navigate(`/addproduct/${item}`) }} />
-                        </div>
 
                     </div>
             }
