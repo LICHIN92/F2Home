@@ -112,7 +112,7 @@
 }
 
 .Book .share {
-    margin-top: 240px;
+    margin-top: 140px;
     position: absolute;
     width: 100%;
     top: 15px;
@@ -129,15 +129,16 @@
     padding-right: 50px;
 }
 @media(min-width:700px){
-.Book .share{
-    margin-top: 70px;
-    padding-right: 50px;
-}
+
 }
 @media(max-width:700px) {
     .Book {
         padding-top: 10px;
     }
+    .Book .share{
+    margin-top: 70px;
+    padding-right: 50px;
+}
 }
 
 @media(max-width:350px) {

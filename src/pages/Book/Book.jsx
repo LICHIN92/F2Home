@@ -90,7 +90,7 @@ const Book = () => {
     return (
         <div className='Book'>
             <div className="share">
-                <PiShareFat  onClick={shareToWhatsApp}/>
+                <PiShareFat onClick={shareToWhatsApp} />
 
             </div>
             {book && (user ?
