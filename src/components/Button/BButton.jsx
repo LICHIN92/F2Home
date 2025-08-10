@@ -1,0 +1,14 @@
+import React from 'react'
+import './buton.css'
+const BButton = ({name,Bcolor,color,type,bdrColor}) => {
+  return (
+    <div>
+        <button type={type} className='bttn' 
+        style={{backgroundColor:Bcolor,color:color,borderColor:bdrColor}}>
+            {name}
+            </button>
+    </div>
+  )
+}
+
+export default BButton

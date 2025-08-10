@@ -1,0 +1,47 @@
+.ConfirmBooking{
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.confirmBox{
+    width: 600px;
+    height: 400px;
+    background-color: black;
+    border: 1px solid white;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display:flex;
+    gap: 5px;
+}
+.ConfirmBooking p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.confirmBox button{
+    padding: 3px 4px;
+    margin-top: 5px;
+}
+.confirmBox button:nth-of-type(1){
+    background-color:rgb(223, 124, 53);
+    color: white;
+}
+.confirmBox button:nth-of-type(2){
+    background-color:rgb(167, 4, 4);
+    color: white;
+}
+.confirmBox img{
+    width: 200px;
+    height: 150px;
+    border:  2px solid rgb(255, 255, 0) ;
+    border-radius: 25px;
+}

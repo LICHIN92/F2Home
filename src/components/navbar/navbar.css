@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Noto+Sans+Malayalam:wght@300&family=Poppins:ital,wght@0,400;0,600;1,500&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.navbarContainer {
+  width: 100vw;
+  height: 80px;
+  background-color: blueviolet;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  /* spacing from sides */
+  position: fixed;
+  z-index: 100;
+}
+
+.navbarContainer h1 {
+  font-family: Dancing Script;
+  color: white;
+}
+
+.navbarContainer ul {
+  display: flex;
+  gap: 20px;
+  /* more space between items */
+}
+
+.navbarContainer li {
+  list-style: none;
+  display: inline;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.1s ease;
+  font-size: 18px;
+  font-family:Merriweather;
+  position: relative;
+}
+.navbarContainer li::after{
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: yellowgreen;
+  bottom: -3px;
+  left: 0;
+  transition: width 0.3s ease-in-out;
+}
+.navbarContainer li:hover::after{
+  width: 100%;
+  }
+.navbarContainer li:hover {
+  color: lightgray;
+}
+
+.toggleMenu {
+  display: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.menuButton {
+  color: white;
+}
+
+@media(max-width:700px) {
+  .toggleMenu {
+    display: block;
+
+  }
+
+  .navbarContainer ul {
+    display: none;
+    flex-direction: column;
+  }
+
+  .navbarContainer {
+    position: relative;
+  }
+
+  .navbarContainer ul {
+    transition: all 10s ease;
+
+  }
+
+  .navbarContainer ul.menuActive {
+    display: flex;
+    flex-direction: column;
+    padding-block: 10px;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    background-color: rgb(170, 158, 182);
+    color: white;
+    width: 100vw;
+    height: 90vh;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    animation: navmenu .5s ease-in-out;
+    position: fixed;
+    z-index: 100;
+    font-size: 20px;
+  font-family:Merriweather;
+
+  }
+
+  @keyframes navmenu {
+    0% {
+      transform: translateX(-500px);
+      transition: ease-in;
+    }
+
+    100% {
+      transform: translateX(0);
+      transition: ease-in;
+    }
+  }
+
+  ul .menuActive:hover {
+    cursor: pointer;
+  }
+}

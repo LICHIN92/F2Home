@@ -1,0 +1,48 @@
+.addItem {
+    padding-top: 100px;
+    max-width: 100vw;
+    height: 100vh;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addItem form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: blueviolet;
+    width: 400px;
+    min-height: 450px;
+    align-items: center;
+    gap: 10px;
+border-radius: 20px;
+padding-block: 10px;
+}
+
+.additemDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* height: 50px; */
+    /* min-height: 100px; */
+    align-items: center;
+    /* background-color: brown; */
+}
+.additemDiv label{
+    font-size: rem;
+}
+.imageprev{
+    margin-top: 10px;
+}
+.veiwingImage{
+    width: 150px;
+}
+@media(max-width:700px){
+    .addItem{
+        padding-top: 0px;
+    }
+}

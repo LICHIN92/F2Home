@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.addproduct {
+    max-width: 100vw;
+    height: 100vh;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.addproduct h1 {
+    text-transform: capitalize;
+    /* background-color: chocolate; */
+}
+
+.addproduct form {
+    margin: 0;
+    /* background-color: brown; */
+    display: flex;
+    flex-direction: column;
+
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width:100vw ;
+    min-height: 80%;
+    padding: 5px;
+
+}
+
+.addproduct .formsdiv {
+    width: 100%;
+    /* background-color: aqua; */
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px;
+    height: auto;
+}
+
+.addproduct .formsdiv div {
+    /* background-color: rgb(124, 177, 177); */
+}
+
+.addSubmit {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    /* background-color: rgb(88, 17, 56); */
+
+}
+.imageshowdiv{
+/* display: flex;
+flex-direction: column;
+align-items: center; */
+
+}
+
+@media(max-width:700px) {
+    .addproduct {
+        padding-top: 0px;
+    }
+
+    .addproduct h1 {
+        text-transform: capitalize;
+        text-align: center;
+    }
+}
+@media (max-width:860px){
+    .addproduct .formsdiv {
+  
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    /* padding: 10px; */
+    height: 80%;
+}
+.formsdiv .imageshowdiv{
+    /* background-color: burlywood; */
+}
+}

@@ -1,0 +1,100 @@
+.inputs {
+    position: relative;
+    padding-top: 25px;
+    /* padding-left: 20px; */
+    display: flex;
+    align-items: center;
+}
+
+.inputs label {
+    position: absolute;
+    left: 2px;
+    top: 1.5rem;
+    color: gray;
+    transition: 500ms cubic-bezier(.4,0,.2,1);
+    pointer-events: none;
+    background-color: transparent;
+}
+
+.inputs input {
+    border: none;
+    outline: 1px solid rgba(0, 0, 0, 0.5);
+    height: 35px;
+    border-radius: 5px;
+    width: 200px;
+    padding: 0 10px;
+}
+
+.inputs input:focus {
+    outline: 1px solid rgb(73, 64, 64);
+}
+
+.inputs input:is(:focus) ~ label {
+    transform: translate(0, -1rem) scale(0.1);
+    background-color: white;
+    padding-inline: 0.5rem;
+    color: rgb(21, 26, 75);
+    border-radius: 10px;
+}
+
+/* .inputs input.not-empty ~ label {
+  transform: translate(0, -1.2rem) scale(0.9);
+  background-color: white;
+  padding-inline: 0.5rem;
+  color: rgb(21, 26, 75);
+  border-radius: 10px;
+} */
+
+.inputs input:focus ~ label,
+.inputs label.active {
+  transform: translate(0, -1.2rem) scale(0.9);
+  background-color: white;
+  padding-inline: 0.5rem;
+  color: rgb(21, 26, 75);
+  border-radius: 10px;
+}
+
+/* For autofill */
+.inputs input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+
+
+.inputs label {
+  position: absolute;
+  left: 25px;
+  top: 2rem;
+  color: gray;
+  transition: 500ms cubic-bezier(.4, 0, .2, 1);
+  pointer-events: none;
+  background-color: transparent;
+}
+
+.inputs input {
+  border: none;
+  outline: 1px solid rgba(0, 0, 0, 0.5);
+  height: 35px;
+  border-radius: 5px;
+  width: 200px;
+  padding: 0 10px;
+}
+
+.inputs input:focus {
+  outline: 1px solid rgb(73, 64, 64);
+}
+
+.inputs label.float {
+  transform: translate(0, -1.2rem) scale(0.9);
+  background-color: white;
+  padding-inline: 0.5rem;
+  color: rgb(21, 26, 75);
+  border-radius: 10px;
+}
+
+/* For autofill */
+.inputs input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset;
+  transition: background-color 5000s ease-in-out 0s;
+}

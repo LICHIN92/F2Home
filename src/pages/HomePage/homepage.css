@@ -1,0 +1,49 @@
+.Homepage {
+    max-width: 100vw;
+    height: 100vh;
+    /* background-color: chocolate; */
+    padding-top: 80px;
+}
+
+.cardConatiner {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    row-gap: 40px;
+}
+
+.card {
+    width: 150px;
+    height: 140px;
+    background-color: darkgray;
+    border-radius: 5px;
+    position: relative;
+    /* border: 1px solid ; */
+    border-radius: 100%;
+margin-top: 10px;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+
+}
+
+.card p {
+    position: relative;
+    font-size: large;
+    text-align: center !important;
+    text-transform: capitalize;
+    color: white;
+    background-color: rgb(42, 165, 97, .6);
+    border-end-start-radius: 5px;
+    border-end-end-radius: 5px;
+}
+
+@media(max-width:700px) {
+    .Homepage {
+        padding-top: 0px;
+    }
+}

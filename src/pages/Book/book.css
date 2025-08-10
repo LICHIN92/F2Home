@@ -1,0 +1,129 @@
+.Book {
+    padding-top: 85px;
+    max-width: 100vw;
+    height: 100vh;
+}
+
+.book_item {
+    width: 100%;
+    height: 100%;
+    
+}
+
+.itemDetail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    /* background-color: rgb(48, 102, 102); */
+}
+
+.book_item img {
+    width: 300px;
+    border: 1px solid rgb(0, 0, 0, .1);
+    border-radius: 5px;
+}
+
+.itemPrice {
+    text-align: center;
+    margin-block: 5px;
+    display: flex;
+    align-items: center;
+    font-weight: 800;
+}
+
+.priceValueBox {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.priceValueBox div {
+    width: 200px;
+    height: 45px;
+    display: flex;
+    background-color: rgb(128, 128, 128, .1);
+    border: 2px solid green;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+.pricevalue {
+    display: flex;
+    align-items: center;
+
+}
+
+.priceValueBox div:hover {
+    background-color: rgb(128, 128, 128, .5);
+
+}
+
+.plusMinus {
+    max-width: 100vw;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 10px;
+}
+
+.bookButtonDiv {
+    width: 100%;
+    /* background-color: brown; */
+    display: flex;
+    padding-block: 5px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.bookButtonDiv button {
+    height: 45px;
+    width: 200px;
+    background-color: #2F5249;
+    color: white;
+    font-size: .98rem;
+    border-radius: 15px;
+}
+
+.outOfStock {
+    text-align: center;
+    color: red;
+    position: relative;
+    font-size: large;
+    font-weight: 600;
+    /* background-color: #2F5249; */
+    display: flex;
+    justify-content: center;
+    /* left: 640px; */
+    bottom: 74px;
+}
+.outOfStock span{
+    background-color: #02f5b8;
+    padding: 2px 5px;
+    color: rgb(170, 3, 3);
+}
+
+@media(max-width:700px) {
+    .Book {
+        padding-top: 10px;
+    }
+}
+
+@media(max-width:350px) {
+
+    /* .itemDetail, */
+    .priceValueBox {
+        width: 100vw;
+    }
+
+    .itemDetail img {
+        width: 85%;
+    }
+
+}

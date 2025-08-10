@@ -1,0 +1,11 @@
+
+.bttn{
+     /* border: none; */
+    /* outline: 1px solid rgba(0, 0, 0, 0.5); */
+    height: 35px;
+    border-radius: 5px;
+    border-radius: 1px solid white;
+    width: 200px;
+    padding: 0 10px;
+    margin-top: 25px;
+}
