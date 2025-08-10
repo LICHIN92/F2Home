@@ -4,6 +4,7 @@ import BButton from '../../components/Button/BButton'
 import axios from 'axios'
 import { useNavigate, useParams } from 'react-router-dom'
 import './product.css'
+const apiUrl = import.meta.env.VITE_API_URL;
 const Product = () => {
     const [formdata, setFormdata] = useState({})
     const [selectedImage, setImage] = useState(null)
@@ -33,7 +34,7 @@ const Product = () => {
         data.append('Stock', formdata.Stock)
 
         try {
-            const res = await axios.post('http://localhost:3000/admin/addProduct', data, {
+            const res = await axios.post(`${apiUrl}/admin/addProduct`, data, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }

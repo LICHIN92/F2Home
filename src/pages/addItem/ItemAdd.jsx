@@ -3,7 +3,7 @@ import Inputz from '../../components/input/Inputz';
 import BButton from '../../components/Button/BButton';
 import './addItem.css';
 import axios from 'axios';
-
+const apiUrl = import.meta.env.VITE_API_URL;
 const ItemAdd = () => {
     const [selectedImage, setImage] = useState(null); // single image
     const [formdata, setFormData] = useState({});
@@ -24,7 +24,7 @@ const ItemAdd = () => {
         data.append('file', selectedImage);         // file field must match backend!
 
         try {
-            const response = await axios.post('http://localhost:3000/admin', data, {
+            const response = await axios.post(`${apiUrl}/admin`, data, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },

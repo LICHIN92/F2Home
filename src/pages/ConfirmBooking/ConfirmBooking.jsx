@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 const ConfirmBooking = ({ selectedQuantity, Price, image, cancel, Id, refresh }) => {
+    const apiUrl = import.meta.env.VITE_API_URL;
     const user = useSelector((state) => state.user.user)
     console.log(user.id);
     const data = { SelectedQuantity: selectedQuantity, Price: Price, Id: Id, User: user.id }
@@ -12,7 +13,7 @@ const ConfirmBooking = ({ selectedQuantity, Price, image, cancel, Id, refresh })
     const Confirm = async () => {
 
         try {
-            const res = await axios.post('http://localhost:3000/booking', data)
+            const res = await axios.post(`${apiUrl}/booking`, data)
             console.log(res.data);
             navigate(-1, { replace: true })
             alert(res.data)

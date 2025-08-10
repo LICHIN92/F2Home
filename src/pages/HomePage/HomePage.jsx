@@ -3,13 +3,14 @@ import './homepage.css'
 import imgg from '../../assets/img/IMG_20230912_133100.jpg'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+const apiUrl = import.meta.env.VITE_API_URL;
 const HomePage = () => {
     const navigate = useNavigate()
     const [datas, setData] = useState([])
     useEffect(() => {
         const viewItem = async () => {
             try {
-                const item = await axios.get('http://localhost:3000/')
+                const item = await axios.get(`${apiUrl}`)
                 console.log(item);
                 setData(item.data.getItem)
                 console.log(datas);

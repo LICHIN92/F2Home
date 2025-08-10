@@ -14,6 +14,7 @@ const AddAddress = ({ cancel }) => {
   console.log(user_id);
   const navigate = useNavigate()
     const dispatch = useDispatch()
+    const apiUrl = import.meta.env.VITE_API_URL;
   // const handleOnchange = (e) => {
   //   setFormData({ ...formData, [e.target.name]: e.target.value })
   //   // alert(e.target.value)
@@ -47,7 +48,7 @@ const AddAddress = ({ cancel }) => {
     }
 
     try {
-      const res = await axios.post(`http://localhost:3000/user/address/${user_id}`, formData)
+      const res = await axios.post(`${apiUrl}/user/address/${user_id}`, formData)
          localStorage.setItem('user', res.data.token)
       dispatch(setUserData(jwtDecode(res.data.token))) // ✅ correctly updates Redux
       alert(res.data.message)

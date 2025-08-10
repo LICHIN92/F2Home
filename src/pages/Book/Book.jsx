@@ -9,7 +9,9 @@ import { useSelector } from 'react-redux'
 import AddAddress from '../address/AddAddress'
 import Tooltips from '../../components/tooltips/Tooltips'
 import UserLogin from '../userLogin/UserLogin'
+
 const Book = () => {
+    const apiUrl = import.meta.env.VITE_API_URL;
     const { _id } = useParams()
     const [data, setData] = useState({})
     const [wait, setWait] = useState(false)
@@ -35,7 +37,7 @@ const Book = () => {
         const fetchData = async () => {
             try {
 
-                const res = await axios.get(`http://localhost:3000/viewItem/${_id}`)
+                const res = await axios.get(`${apiUrl}/viewItem/${_id}`)
                 setWait(true)
                 setData(res.data)
                 setQuantity(res.data.Minimum)
