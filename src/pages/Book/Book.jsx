@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux'
 import AddAddress from '../address/AddAddress'
 import Tooltips from '../../components/tooltips/Tooltips'
 import UserLogin from '../userLogin/UserLogin'
+import { PiShareFat } from 'react-icons/pi'
 
 const Book = () => {
     const apiUrl = import.meta.env.VITE_API_URL;
@@ -20,7 +21,7 @@ const Book = () => {
     const [book, setBook] = useState(false)
     const [image, setImage] = useState(null)
     const [minQuan, SetMin] = useState(null)
-    const[refresh,setRefresh]=useState(false)
+    const [refresh, setRefresh] = useState(false)
     const isAddress = useSelector((state) => state.user.user.IsAddress)
     console.log(isAddress);
     const user = localStorage.getItem('user')
@@ -61,7 +62,7 @@ const Book = () => {
             alert(`Available Quantity is ${maxQuan / 1000} Kg`)
         }
         console.log(quantity);
-        
+
     }
 
     const decreaseFun = () => {
@@ -79,9 +80,19 @@ const Book = () => {
         const basePricePerKg = Number(data.Price) || 0
         return Math.floor((quantity / 1000) * basePricePerKg)
     }
+    const shareToWhatsApp = () => {
+        const productUrl = `${window.location.origin}/Book/${_id}`;
+        const message = `Check out this product: ${data.Name} for ₹${data.Price} per Kg.\n${productUrl}`;
+        const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, "_blank");
+    };
+
     return (
         <div className='Book'>
+            <div className="share">
+                <PiShareFat  onClick={shareToWhatsApp}/>
 
+            </div>
             {book && (user ?
                 (isAddress ?
                     <ConfirmBooking selectedQuantity={quantity} Price={calculatePrice()}
@@ -129,11 +140,11 @@ const Book = () => {
                                     <button onClick={() => setBook(true)}>Book Now</button>
                                 </div>
                             </>
-                            :  
+                            :
                             <p className='outOfStock'>
                                 <span>Out of Stock</span>
                             </p>
-                            }
+                        }
 
                     </div> :
                     <p>please wait...</p>
