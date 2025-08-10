@@ -9,7 +9,8 @@ const UserLogin = () => {
   const [loginData, setLoginData] = useState({});
   const [isLogin, setLogin] = useState(true)
   const navigate = useNavigate();
-  ;
+ const apiUrl = import.meta.env.VITE_API_URL;
+
   const goback = () => {
     console.log(window.history.length)
   }
@@ -30,7 +31,7 @@ const UserLogin = () => {
   const LoginSubmit = async (e) => {
     e.preventDefault()
     try {
-      const response = await axios.post(`http://localhost:3000/user/login`, loginData);
+      const response = await axios.post(`${apiUrl}/user/login`, loginData);
       console.log(response);
       alert(response.data.message)
       localStorage.setItem('user', response.data.token)
@@ -47,7 +48,7 @@ const UserLogin = () => {
     console.log(formData);
 
     try {
-      const response = await axios.post(`http://localhost:3000/user`, formData);
+      const response = await axios.post(`${apiUrl}/user`, formData);
       console.log(response);
       alert(response.data.message)
       localStorage.setItem('uses', response.data.token)
