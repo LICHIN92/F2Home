@@ -5,8 +5,13 @@ import { RiCloseLargeFill } from 'react-icons/ri'
 import { CgMenuGridO } from 'react-icons/cg'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 const Navbars = () => {
   const [menuOpen, setMenuOpen] = useState(false)
+  const token = localStorage.getItem('user')
+  const user = useSelector((state) => state.user.user)
+  console.log(user);
+
   const navigate = useNavigate()
   useEffect(() => {
     const handleResize = () => {
@@ -38,6 +43,13 @@ const Navbars = () => {
         <li onClick={() => { setMenuOpen(false); navigate('/about'); }}>About</li>
         <li onClick={() => { setMenuOpen(false); navigate('/services'); }}>Services</li>
         <li onClick={() => { setMenuOpen(false); navigate('/contact'); }}>Contact</li>
+        {token && user?(
+          <li onClick={() => { setMenuOpen(false); navigate('/profile'); }} >Profile</li>
+      )
+      :
+       <li onClick={() => { setMenuOpen(false); navigate('/login'); }} >Login</li>
+      }
+
       </ul>
 
     </div>

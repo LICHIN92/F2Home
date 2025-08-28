@@ -11,6 +11,9 @@ import ItemAdd from './pages/addItem/ItemAdd'
 import Product from './pages/Addproduct/Product'
 import { Provider } from 'react-redux'
 import store from './redux/store'
+import Profile from './pages/Profile/Profile'
+import MyBooking from './pages/mybooking/MyBooking'
+import DetailBookCancel from './pages/detailBookCancel/detailBookCancel'
 const router = createBrowserRouter([
   {
     element: <MainPage/>,
@@ -38,7 +41,20 @@ const router = createBrowserRouter([
       {
         path:'/addproduct/:item',
         element:<Product/>
+      },
+      {
+        path:'/profile',
+        element:<Profile/>
+      },
+      {
+        path:"/mybooking",
+        element:<MyBooking/>
+      },
+      {
+        path:'/showOrCancel',
+        element:<DetailBookCancel/>
       }
+     
     ]
   }
 ])

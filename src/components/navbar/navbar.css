@@ -8,7 +8,7 @@
 
 .navbarContainer {
   width: 100vw;
-  height: 80px;
+  height: 60px;
   background-color: blueviolet;
   display: flex;
   justify-content: space-between;
@@ -99,9 +99,9 @@
     background-color:#8A2BE2;
     color: white;
     width: 100vw;
-    height: 99vh;
+    height: 100vh;
     position: absolute;
-    top: 80px;
+    top: 60px;
     right: 0;
     animation: navmenu .5s ease-in-out;
     /* position: fixed; */

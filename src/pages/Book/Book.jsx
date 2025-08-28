@@ -89,10 +89,7 @@ const Book = () => {
 
     return (
         <div className='Book'>
-            <div className="share">
-                <PiShareFat onClick={shareToWhatsApp} />
-
-            </div>
+         
             {book && (user ?
                 (isAddress ?
                     <ConfirmBooking selectedQuantity={quantity} Price={calculatePrice()}
@@ -105,6 +102,10 @@ const Book = () => {
             {
                 wait ?
                     <div className='book_item'>
+                           <div className="share">
+                <PiShareFat onClick={shareToWhatsApp} />
+
+            </div>
                         <div className='itemDetail'>
                             <img src={data.Pic} alt={data.Name} />
                             <p className='itemPrice'>{data.Name}</p>
