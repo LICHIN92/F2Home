@@ -13,7 +13,7 @@ import { Provider } from 'react-redux'
 import store from './redux/store'
 import Profile from './pages/Profile/Profile'
 import MyBooking from './pages/mybooking/MyBooking'
-import DetailBookCancel from './pages/detailBookCancel/detailBookCancel'
+import DetailBookCancel from './pages/detailBookCancel/DetailBookCancel'
 const router = createBrowserRouter([
   {
     element: <MainPage/>,
