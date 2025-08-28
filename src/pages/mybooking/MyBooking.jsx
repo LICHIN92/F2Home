@@ -12,7 +12,7 @@ const MyBooking = () => {
     useEffect(() => {
         const fetch = async () => {
             try {
-                const res = await axios.get(`${apiUrl}/user/booking/${id}`)
+                const res = await axios.get(`${apiUrl}/user/booking/${id}`) 
                 setOrder(res.data)
                 console.log(res.data); 
 
