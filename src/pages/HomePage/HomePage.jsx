@@ -10,15 +10,15 @@ const HomePage = () => {
     const navigate = useNavigate()
     const [datas, setData] = useState([])
     const User = useSelector((state) => state.user?.user.User)
-    console.log(User);
-
+    // console.log(User);
+    const [wait, setWait] = useState(true)
     useEffect(() => {
         const viewItem = async () => {
             try {
                 const item = await axios.get(`${apiUrl}`)
                 console.log(item);
                 setData(item.data.getItem)
-
+                setWait(false)
             } catch (error) {
                 console.log(error);
 
@@ -31,26 +31,32 @@ const HomePage = () => {
             <div className='adminAdd'>
                 {User &&
                     <RiStickyNoteAddFill className='addIcon'
-                    onClick={()=>navigate('/addItem')}
+                        onClick={() => navigate('/addItem')}
                     />
                 }
 
             </div>
-            <div className="cardConatiner">
-                {datas.length > 0 ?
+            {
+                wait ?
+                    <p className='wait'>Please wait....</p>
+                    :
+                    <div className="cardConatiner">
+                        {datas.length > 0 ?
 
-                    (
-                        datas.map((data, index) => (
-                            <div className="card" key={index} onClick={() => navigate(`/view/${data.Item}`)}>
-                                <img src={data.pic} alt="sss" />
-                                <p>{data.Item}</p>
-                            </div>
-                        ))
+                            (
+                                datas.map((data, index) => (
+                                    <div className="card" key={index} onClick={() => navigate(`/view/${data.Item}`)}>
+                                        <img src={data.pic} alt="sss" />
+                                        <p>{data.Item}</p>
+                                    </div>
+                                ))
 
-                    )
-                    : " no data"}
+                            )
+                            : " no data"}
 
-            </div>
+                    </div>
+
+            }
 
         </div>
     )

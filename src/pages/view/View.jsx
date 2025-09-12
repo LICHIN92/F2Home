@@ -41,13 +41,13 @@ const View = () => {
                 }
             </div>
             {
-                wait ? 'please wait...... '
+                wait ? <p className='wait'>please wait...... </p>
                     :
                     <div className="viewcardContainer">
                         {data.length > 0 ?
                             (data.map((file, index) => (
                                 <div className='view_card' onClick={() => navigate(`/Book/${file._id}`)}>
-                                    <img src={file.Pic} alt="ccc" />
+                                    <img src={file.Pic} alt={file.Name} />
                                     <div className="item_Name">
                                         <h6>{file.Name}</h6>
                                         <h6>

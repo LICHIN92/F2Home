@@ -14,6 +14,9 @@ import store from './redux/store'
 import Profile from './pages/Profile/Profile'
 import MyBooking from './pages/mybooking/MyBooking'
 import DetailBookCancel from './pages/detailBookCancel/DetailBookCancel'
+import LogoDisplay from './components/logoDisplay/LogoDisplay'
+import ViewProfile from './pages/ViewProfile/ViewProfile'
+import MobileChange from './pages/MobileChange/MobileChange'
 const router = createBrowserRouter([
   {
     element: <MainPage/>,
@@ -53,6 +56,14 @@ const router = createBrowserRouter([
       {
         path:'/showOrCancel',
         element:<DetailBookCancel/>
+      },
+      {
+        path:'/ViewProfile',
+        element:<ViewProfile/>
+      },
+      {
+        path:'/changeMobile',
+        element:<MobileChange/>
       }
      
     ]

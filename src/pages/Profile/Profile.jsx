@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { FaRegUserCircle } from 'react-icons/fa'
 import { clearUserData } from '../../redux/userSlice'
 import { useNavigate } from 'react-router-dom'
+import { MdOutlineBookmarkBorder } from 'react-icons/md'
+import { TbLockPassword } from 'react-icons/tb'
 const Profile = () => {
   const user = useSelector(state => state.user.user)
   console.log(user);
@@ -21,8 +23,17 @@ const Profile = () => {
         <p><FaRegUserCircle /> {user.FirstName}</p>
         <span className='logout' onClick={() => logOutFun()}>Logout</span>
       </div>
-    <div>
-        <span onClick={() => navigate('/mybooking')}>My Booking</span> 
+      <div className='profileOption'>
+        <span onClick={() => navigate('/mybooking')}>My Booking
+          <MdOutlineBookmarkBorder className='book' />
+
+        </span>
+        <span onClick={()=>navigate('/ViewProfile')}> View Profile</span>
+        <span>
+          Change Password <TbLockPassword />
+
+        </span>
+        <span onClick={()=>navigate('/changeMobile')}>Change Mobile </span>
       </div>
 
     </div>

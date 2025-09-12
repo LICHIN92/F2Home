@@ -65,7 +65,9 @@
     cursor: pointer;
 
 }
-
+.wait{
+    text-align: center;
+}
 @media(max-width:700px) {
     .Homepage {
         padding-top: 0px;

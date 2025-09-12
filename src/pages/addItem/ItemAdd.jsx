@@ -3,11 +3,12 @@ import Inputz from '../../components/input/Inputz';
 import BButton from '../../components/Button/BButton';
 import './addItem.css';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 const apiUrl = import.meta.env.VITE_API_URL;
 const ItemAdd = () => {
     const [selectedImage, setImage] = useState(null); // single image
     const [formdata, setFormData] = useState({});
-
+const navigate =useNavigate()
     const fileOnChange = (e) => {
         setImage(e.target.files[0]); // only one file
     };
@@ -31,8 +32,12 @@ const ItemAdd = () => {
             });
 
             console.log('Success:', response.data);
+            alert(response.data)
+            navigate('/')
         } catch (error) {
             console.log('Upload failed:', error);
+            alert(error.response.data)
+              navigate('/')
         }
     };
 

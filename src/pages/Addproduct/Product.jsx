@@ -32,7 +32,10 @@ const Product = () => {
         data.append('Name', formdata.Name);
         data.append('Price', formdata.Price);
         data.append('Stock', formdata.Stock)
-
+        data.append('Minimum', formdata.Minimum)
+        if (formdata.Minimum > formdata.Stock) {
+            return alert('Minimum must be less than Stoke')
+        }
         try {
             const res = await axios.post(`${apiUrl}/admin/addProduct`, data, {
                 headers: {
@@ -40,9 +43,11 @@ const Product = () => {
                 }
             });
             console.log(res);
+            alert(res.data.message)
             navigate(`/view/${item}`)
         } catch (error) {
             console.log(error);
+            alert(error.response.data.message)
         } finally {
             setUpload(false);
         }
@@ -54,42 +59,46 @@ const Product = () => {
             <form onSubmit={formSubmit}>
 
 
-              <div className="formsdiv">
-                  <div>
-                    <Inputz name={'Item'} label={'Item'} value={item} />
-                </div>
-                <div>
-                    <Inputz name={'Name'} label={'Name'} type={'text'} required={true}
-                        value={formdata.Name} onchange={handleChange} />
-                </div>
-                <div>
-                    <Inputz name="Price"
-                        type="number"
-                        label="Price "
-                        value={formdata.Price}
-                        onchange={handleChange}
-                        required={true} />
+                <div className="formsdiv">
+                    <div>
+                        <Inputz name={'Item'} label={'Item'} value={item} />
+                    </div>
+                    <div>
+                        <Inputz name={'Name'} label={'Name'} type={'text'} required={true}
+                            value={formdata.Name} onchange={handleChange} />
+                    </div>
+                    <div>
+                        <Inputz name="Price"
+                            type="number"
+                            label="Price/Kg "
+                            value={formdata.Price}
+                            onchange={handleChange}
+                            required={true} />
 
+                    </div>
+                    <div>
+                        <Inputz name={'Stock'} label={'Stock (Kg)'} type={'number'} required={true}
+                            value={formdata.Stock} onchange={handleChange} />
+                    </div>
+                    <div>
+                        <Inputz name={'Minimum'} label={'Minimum'} type={'Number'}
+                            value={formdata.Minimum} onchange={handleChange} />
+                    </div>
+                    <div className='imageshowdiv'>
+                        <label htmlFor="">Select Image</label><br />
+                        <input type="file" accept='image/*' onChange={filechange} required />
+                        {selectedImage && (
+                            <div className='imageprev'>
+                                <img
+                                    className='veiwingImage'
+                                    src={URL.createObjectURL(selectedImage)}
+                                    alt="preview"
+                                />
+                            </div>
+                        )}
+                    </div>
                 </div>
-                <div>
-                    <Inputz name={'Stock'} label={'Stock (Kg)'} type={'number'} required={true}
-                        value={formdata.Stock} onchange={handleChange} />
-                </div>
-                <div className='imageshowdiv'>
-                    <label htmlFor="">Select Image</label><br />
-                    <input type="file" accept='image/*' onChange={filechange} required />
-                    {selectedImage && (
-                        <div className='imageprev'>
-                            <img
-                                className='veiwingImage'
-                                src={URL.createObjectURL(selectedImage)}
-                                alt="preview"
-                            />
-                        </div>
-                    )}
-                </div> 
-              </div>
-                 <div className='addSubmit'>
+                <div className='addSubmit'>
                     <BButton type={'submit'} name={upload ? 'Uploading...' : "Upload"} />
 
                 </div>

@@ -1,0 +1,23 @@
+.mobileChange {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(240, 240, 240);
+    height: 100vh;
+}
+.mobileChange h1{
+    font-size: 1.8rem;
+    text-align: center;
+}
+.mobileChange .mobileBox{
+    /* background-color: brown; */
+    border-radius: 15px;
+    width: 300px;
+    height: auto;
+    padding-block: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 5px 5px rgb(0, 0, 0,.2);
+    
+}
