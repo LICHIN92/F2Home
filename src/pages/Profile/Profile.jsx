@@ -29,7 +29,7 @@ const Profile = () => {
 
         </span>
         <span onClick={()=>navigate('/ViewProfile')}> View Profile</span>
-        <span>
+        <span onClick={()=>navigate('/changePassword')}>
           Change Password <TbLockPassword />
 
         </span>

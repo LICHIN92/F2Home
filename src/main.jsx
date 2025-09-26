@@ -17,6 +17,7 @@ import DetailBookCancel from './pages/detailBookCancel/DetailBookCancel'
 import LogoDisplay from './components/logoDisplay/LogoDisplay'
 import ViewProfile from './pages/ViewProfile/ViewProfile'
 import MobileChange from './pages/MobileChange/MobileChange'
+import PasswordChange from './pages/PasswordChange/PasswordChange'
 const router = createBrowserRouter([
   {
     element: <MainPage/>,
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
       {
         path:'/changeMobile',
         element:<MobileChange/>
+      },
+       {
+        path:'/changePassword',
+        element:<PasswordChange/>
       }
      
     ]
