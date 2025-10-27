@@ -21,3 +21,10 @@
     box-shadow: 5px 5px 5px 5px rgb(0, 0, 0,.2);
     
 }
+
+@media(max-width:700px){
+/* .mobileBox{
+    margin-top: 0px;
+
+} */
+}

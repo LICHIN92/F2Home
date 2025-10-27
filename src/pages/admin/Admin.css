@@ -1,0 +1,23 @@
+.admin {
+    max-width: 100vw;
+    background-color: rgb(220, 226, 231);
+    height: 100vh;
+    padding-top: 70px;
+}
+
+.adminOptions {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 15px;
+    padding-inline: 10px;
+    gap: 15px;
+}
+
+.adminControl {
+    width: 130px;
+    height: 80px;
+    text-transform: capitalize;
+    padding: 10px;
+  border-radius: 10px;
+    background-color: aqua;
+}

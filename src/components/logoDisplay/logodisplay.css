@@ -26,3 +26,11 @@
         background-position: 0% 50%;
     }
 }
+
+@media(max-width:600px){
+    .logoDisplay img{
+        width: 90%;
+        height: 50%;
+        /* border: 2px solid white; */
+    }
+}

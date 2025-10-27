@@ -45,7 +45,7 @@ const UserLogin = () => {
       reduxfunctions()
     } catch (error) {
       console.log(error.response.data);
-
+      alert(error.response.data)
 
     }
   }
@@ -61,7 +61,7 @@ const UserLogin = () => {
       reduxfunctions()
     } catch (error) {
       console.log(error.response.data);
-
+      alert(error.response.data)
     }
   }
   return (

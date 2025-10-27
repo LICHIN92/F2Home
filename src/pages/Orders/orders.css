@@ -1,0 +1,92 @@
+.orders {
+    /* padding-inline: 10px; */
+    padding-top: 65px;
+    max-width: 100vw;
+}
+.orders h1{
+    margin-left: 5px;
+}
+.order-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 5px;
+    padding-inline: 5px;
+}
+
+.itemOrder {
+    width: 140px;
+    height: 80px;
+    gap: 10px;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.dd{
+     width: 140px;
+    height: 80px;
+    gap: 10px;
+    background-color: rgb(110, 30, 30);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.itemOrder:hover {
+    border: 1px solid black;
+    font-size: 1.1rem;
+}
+
+.orders h2 {
+    text-decoration: underline;
+    padding-left: 10px;
+}
+
+.itemOrder {
+    /* background-color: aqua; */
+}
+.tables{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+table {
+    margin-top: 5px;
+    margin-inline: 5px;
+    min-width: 90vw;
+        border-collapse:separate; /* prevents double borders */
+
+    border: 1px solid rgb(0, 0, 0, .5);
+    
+}
+
+table thead th {
+    width: auto;
+    background-color: rgb(146, 99, 38);
+    height: 25px;
+}
+
+th:nth-child(1) {
+    width: 45px;
+}
+
+td {
+    text-align: center;
+    height: 25px;
+}
+
+tr {
+    background-color: rgba(91, 91, 100, 0.5);
+}
+
+@media(max-width:700px) {
+    .orders {
+        padding-top: 0px;
+        
+    }
+}

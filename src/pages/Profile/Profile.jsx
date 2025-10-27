@@ -28,12 +28,18 @@ const Profile = () => {
           <MdOutlineBookmarkBorder className='book' />
 
         </span>
-        <span onClick={()=>navigate('/ViewProfile')}> View Profile</span>
-        <span onClick={()=>navigate('/changePassword')}>
+        <span onClick={() => navigate('/ViewProfile')}> View Profile</span>
+        <span onClick={() => navigate('/changePassword')}>
           Change Password <TbLockPassword />
 
         </span>
-        <span onClick={()=>navigate('/changeMobile')}>Change Mobile </span>
+        <span onClick={() => navigate('/changeMobile')}>Change Mobile </span>
+
+        {
+          user.User &&
+          <span onClick={()=>navigate('/admin')}>Admin</span>
+        }
+
       </div>
 
     </div>
