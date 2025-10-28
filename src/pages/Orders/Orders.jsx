@@ -23,7 +23,7 @@ const Orders = () => {
     }, [apiUrl])
 
     const handleItemClick = async (itemId) => {
-        
+
         // 🟢 If user clicks the same item again → unselect
         if (selectedItem === itemId) {
             setSelectedItem(null);
@@ -58,7 +58,7 @@ const Orders = () => {
                             onClick={() => handleItemClick(order._id)}
                         >
                             <span>{order._id}</span>
-                            <span>₹ {order.total}</span>
+                            <span>{order.total}</span>
                         </div>
                     ))}
                 </div>
