@@ -29,7 +29,7 @@ const ConfirmBooking = ({ selectedQuantity, Price, image, cancel, Id, refresh })
             <div className='confirmBox'>
                 <img src={image} alt="image of pic" />
                 <p>
-                    Selected Quantity:{selectedQuantity > 1000 ? selectedQuantity / 1000 : selectedQuantity}
+                    Selected Quantity: {selectedQuantity > 1000 ? selectedQuantity / 1000 : selectedQuantity}
                     {selectedQuantity > 1000 ? 'Kg' : 'g'}
                 </p>
                 <p>Price:  <LiaRupeeSignSolid />{Price}/-</p>

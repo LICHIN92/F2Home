@@ -25,17 +25,13 @@
     cursor: pointer;
     margin-bottom: 10px;
 }
-.dd{
-     width: 140px;
-    height: 80px;
-    gap: 10px;
-    background-color: rgb(110, 30, 30);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    margin-bottom: 10px;
+.itemOrder.selected {
+  background-color: rgb(146, 99, 38);
+  color: white;
+  transform: scale(1.03);
+  transition: 0.2s;
 }
+
 .itemOrder:hover {
     border: 1px solid black;
     font-size: 1.1rem;
@@ -46,9 +42,6 @@
     padding-left: 10px;
 }
 
-.itemOrder {
-    /* background-color: aqua; */
-}
 .tables{
     width: 100%;
     display: flex;
@@ -88,5 +81,17 @@ tr {
     .orders {
         padding-top: 0px;
         
+    }
+}
+@media(max-width:700px) {
+    .orders {
+        padding-top: 0px;
+        
+    }
+}
+@media(max-width:576px) {
+    table{
+        padding-top: 0px;
+        width: 98vw;
     }
 }
