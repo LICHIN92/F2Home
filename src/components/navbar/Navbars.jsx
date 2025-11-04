@@ -31,7 +31,7 @@ const Navbars = () => {
   return (
     <div className="navbarContainer">
       <div className="logo">
-        <h1>Fresh2Home</h1>
+        <h1>F2Home</h1>
       </div>
       <button aria-label="Toggle navigation menu" className='toggleMenu'
         onClick={() => setMenuOpen(!menuOpen)}>
@@ -41,14 +41,20 @@ const Navbars = () => {
       <ul className={menuOpen ? 'menuActive' : ""}>
         <li onClick={() => { setMenuOpen(false); navigate('/'); }}>Home</li>
         <li onClick={() => { setMenuOpen(false); navigate('/about'); }}>About</li>
-        <li onClick={() => { setMenuOpen(false); navigate('/services'); }}>Services</li>
-        <li onClick={() => { setMenuOpen(false); navigate('/contact'); }}>Contact</li>
-        {token && user?(
+        <li onClick={() => {
+          setMenuOpen(false);
+          // navigate('/services'); 
+        }}>Services</li>
+        <li onClick={() => {
+          setMenuOpen(false);
+          // navigate('/contact');
+        }}>Contact</li>
+        {token && user ? (
           <li onClick={() => { setMenuOpen(false); navigate('/profile'); }} >Profile</li>
-      )
-      :
-       <li onClick={() => { setMenuOpen(false); navigate('/login'); }} >Login</li>
-      }
+        )
+          :
+          <li onClick={() => { setMenuOpen(false); navigate('/login'); }} >Login</li>
+        }
 
       </ul>
 

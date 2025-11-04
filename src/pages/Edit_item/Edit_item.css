@@ -1,0 +1,72 @@
+.Edit_Item {
+    padding-top: 70px;
+    padding-left: 5px;
+}
+
+.Edit_Item .searchITEM {
+    background-color: rgb(17, 97, 17);
+    display: flex;
+    align-items: c;
+    border: 1px solid green;
+    height: 35px;
+    width: 250px;
+}
+
+.searchITEM form {
+    width: 100%;
+}
+
+.Edit_Item input {
+    /* border: none; */
+    width: 80%;
+    height: 100%;
+}
+
+.Edit_Item .searchITEM form button {
+    height: 100%;
+    width: 20%;
+    padding-inline: 3px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.searchITEM form button:hover {
+    background-color: green;
+    color: wheat;
+    border: none;
+}
+
+.Edit_Item h3 {
+    margin-block: 10px;
+    text-align: center;
+}
+.Edit_Item div:nth-child(2){
+    display: flex;
+    justify-content: center;
+    
+}
+.editform {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    gap: 10px;
+}
+.editform label{
+    margin-top: 10px;
+    font-weight: bold;
+}
+.editform input{
+    width: 400px;
+    height: 30px;
+}
+.editform img{
+    width: 400px;
+}
+.editform button{
+    width: 400px;
+    margin-top: 5px;
+    height: 30px;
+    background-color: darksalmon;
+}

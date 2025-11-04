@@ -23,6 +23,7 @@ import AuthAdmin from './components/authprotect/AuthAdmin'
 import Orders from './pages/Orders/Orders'
 import Edit_Item from './pages/Edit_item/Edit_Item'
 import EditProduct from './pages/EditProduct/EditProduct'
+import About from './pages/about/About'
 
 // const user=useSelector(state=>state.user)
 const router = createBrowserRouter([
@@ -76,6 +77,10 @@ const router = createBrowserRouter([
       {
         path: '/changePassword',
         element: <PasswordChange />
+      },
+      {
+        path:'/about',
+        element:<About/>
       },
       {
         path: '/admin',

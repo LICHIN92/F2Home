@@ -20,6 +20,13 @@
         gap: 25px;
 }
 
+
+.BookedImage {
+    display: flex;
+    justify-content: center;
+    height: 50%;
+    /* background-color: azure; */
+}
 .bookedCard {
     background-color: rgb(255, 255, 255);
     border: 1px solid rgb(128, 128, 128,.5);
@@ -29,19 +36,11 @@
     padding-block: 5px;
 }
 .bookedCard:hover{
-    width: 242px;
-    height: 130px;
+   transform: scale(1.1);
+    transition: all 0.3s ease;
     border-color: yellowgreen;
     cursor: pointer;
-    margin-top: 10px;
 }
-.BookedImage {
-    display: flex;
-    justify-content: center;
-    height: 50%;
-    /* background-color: azure; */
-}
-
 .bookedCard img {
     width: 45%;
     height: 100%;
@@ -51,7 +50,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(42, 106, 165);
+    background-color: rgba(1, 65, 15, 0.918);
     height: 50%;
     gap: 2px;
     color: white;
@@ -67,13 +66,17 @@
     justify-content: center;
 }
 
-@media(max-width:701px){
+.messagePara{
+    text-align: center;
+}
+
+@media(max-width:700px){
     .MyBooking {
 
-    padding-top: 10px;
+    padding-top: 0px;
 
 }
 .bookedCard{
-    width: 110px;
+    width: 150px;
 }
 }

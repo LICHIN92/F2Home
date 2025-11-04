@@ -9,16 +9,32 @@
 }
 .detailBookedCancel img{
     width: 200px;
-    height: 150px;
+    height: 200px;
     /* border: 2px solid; */
+}
+.BookedProduct{
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-block: 4px;
+}
+.detailBookedCancel p{
+    margin-top: 5px;
+}
+.detailBookedCancel span{
+    font-weight: 600;
 }
 .cancelButton{
     background-color: rgb(196, 27, 27);
     padding-inline: 4px;
-    margin-top: 5px;
+    margin-top: 10px;
+    width: 100px;
+    text-align: center;
+    padding-block: 5px;
     color: white;
+    font-size: 1.2rem;
+    font-weight: lighter;
 }
 .cancelButton:hover{
-    background-color: rgb(155, 29, 88);
+    background-color: rgb(117, 28, 13);
     cursor: pointer;
 }

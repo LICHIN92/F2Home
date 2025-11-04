@@ -55,6 +55,10 @@
 }
 .profileOption span:hover{
     border: 1px solid black;
+    background-color: #004030;
+    color: white;
+     transform: scale(1.01);
+    transition: all 0.5s ease ;
 }
 .profileOption span:nth-child(1){
     background-color: #03634b;

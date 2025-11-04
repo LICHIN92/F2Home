@@ -46,16 +46,17 @@ const MyBooking = () => {
                                     <LuIndianRupee />
                                     {file.Price}/-
                                 </span>
-                                <span>{file.Quantity > 1000 ? file.Quantity / 1000 : file.Quantity}
-                                    {file.Quantity > 1000 ? "Kg" : 'g'}
+                                <span>{file.Quantity >= 1000 ? file.Quantity / 1000 : file.Quantity}
+                                    {file.Quantity >= 1000 ? " Kg" : ' g'}
                                 </span>
+
                             </div>
                         </div>
                     ))}
                 </div>
             )
                 :
-                ""}
+                <p className='messagePara' >You don't have any new bookings</p> }
         </div>
     )
 }

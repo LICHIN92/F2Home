@@ -19,13 +19,13 @@ const DetailBookCancel = () => {
         <div className='detailBookedCancel'>
             {opened && <Modall close={setOpen} id={data._id} />}
             <img src={data.BookedItem?.Pic} alt="kk" />
-            <p>{data.BookedItem.Name}</p>
-            <p>
-                {data.Quantity > 1000 ? data.Quantity / 1000 : data.Quantity}
-                {data.Quantity > 1000 ? 'Kg' : 'g'}
+            <p className='BookedProduct'>{data.BookedItem.Name}</p>
+            <p> <span>Quantity: </span>
+                {data.Quantity >= 1000 ? data.Quantity / 1000 : data.Quantity}
+                {data.Quantity >= 1000 ? ' Kg' : ' g'}
             </p>
-            <p>Amount: {data.Price}/-</p>
-            <p>{datefun(data.createdAt)}</p>
+            <p><span>Amount:</span> ₹ {data.Price}/-</p>
+            <p> <span>Date of Booking: </span> {datefun(data.createdAt)}</p>
             <span className='cancelButton' onClick={() => setOpen(true)} > Cancel</span>
         </div>
     )

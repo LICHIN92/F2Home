@@ -24,7 +24,7 @@ const Profile = () => {
         <span className='logout' onClick={() => logOutFun()}>Logout</span>
       </div>
       <div className='profileOption'>
-        <span onClick={() => navigate('/mybooking')}>My Booking
+        <span onClick={() => navigate('/mybooking')}>Bookings
           <MdOutlineBookmarkBorder className='book' />
 
         </span>

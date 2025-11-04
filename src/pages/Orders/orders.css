@@ -3,9 +3,11 @@
     padding-top: 65px;
     max-width: 100vw;
 }
-.orders h1{
+
+.orders h1 {
     margin-left: 5px;
 }
+
 .order-list {
     display: flex;
     flex-wrap: wrap;
@@ -16,7 +18,7 @@
 
 .itemOrder {
     width: 140px;
-    height: 80px;
+    height: 50px;
     gap: 10px;
     background-color: gray;
     display: flex;
@@ -25,15 +27,16 @@
     cursor: pointer;
     margin-bottom: 10px;
 }
+
 .itemOrder.selected {
-  background-color: rgb(146, 99, 38);
-  color: white;
-  transform: scale(1.03);
-  transition: 0.2s;
+    background-color: rgb(146, 99, 38);
+    color: white;
+    transform: scale(1.03);
+    transition: 0.2s;
 }
 
 .itemOrder:hover {
-    border: 1px solid black;
+    border: 1px solid rgb(252, 249, 249);
     font-size: 1.1rem;
 }
 
@@ -42,20 +45,22 @@
     padding-left: 10px;
 }
 
-.tables{
+.tables {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 table {
     margin-top: 5px;
     margin-inline: 5px;
     min-width: 90vw;
-        border-collapse:separate; /* prevents double borders */
+    border-collapse: separate;
+    /* prevents double borders */
 
     border: 1px solid rgb(0, 0, 0, .5);
-    
+
 }
 
 table thead th {
@@ -77,20 +82,47 @@ tr {
     background-color: rgba(91, 91, 100, 0.5);
 }
 
+.tableDiv {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+tr:hover {
+    background-color: chocolate;
+    cursor: pointer;
+}
+
+.CustomerName {
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.tableDive {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+}
+
 @media(max-width:700px) {
     .orders {
         padding-top: 0px;
-        
+
     }
 }
+
 @media(max-width:700px) {
     .orders {
         padding-top: 0px;
-        
+
     }
 }
+
 @media(max-width:576px) {
-    table{
+    table {
         padding-top: 0px;
         width: 98vw;
     }
