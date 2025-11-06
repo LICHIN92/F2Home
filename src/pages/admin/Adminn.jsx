@@ -16,6 +16,9 @@ const Adminn = () => {
                 <div className='adminControl' onClick={()=>navigate('/editProduct')}>
                     Edit Product
                 </div>
+                <div className='adminControl' onClick={()=>navigate('/users')}>
+                    Users
+                </div>
 
             </div>
         </div>

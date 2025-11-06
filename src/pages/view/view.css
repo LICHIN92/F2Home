@@ -1,37 +1,52 @@
-.veiw{
+.veiw {
     max-width: 100vw;
     /* background-color: chocolate; */
     height: 100vh;
     padding-top: 90px;
 }
-.veiw h1{
+
+.veiw h1 {
     text-align: center;
     margin-bottom: 15px;
 }
-.viewcardContainer{
-   width: 100%;
-   /* background-color: aqua; */
-   height:78vh;
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: center;
-   gap: 15px;
+
+.viewcardContainer {
+    width: 100%;
+    /* background-color: aqua; */
+    height: 78vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
 }
-.view_card{
+
+.view_card {
     width: 180px;
     height: 160px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 }
-.view_card img{
+
+.view_card:hover {
+    transform: scale(1.01);
+    padding: 0px;
+    transition: all 0.30s ease-in;
+    background-color: #450c7a;
+    border: 1px solid #8A2BE2;
+    color: white;
+}
+
+.view_card img {
     width: 100%;
-    height:78%;
-    border-start-start-radius:10px ;
-    border-start-end-radius:10px ;
+    height: 78%;
+    border-start-start-radius: 10px;
+    border-start-end-radius: 10px;
 
 }
+
 .view_card .item_Name {
     height: 22%;
     display: flex;
@@ -41,29 +56,33 @@
     text-align: center;
     font-size: 1.5rem;
     /* background-color: blue; */
-       border-end-start-radius:10px ;
-    border-end-end-radius:10px ;
+    border-end-start-radius: 10px;
+    border-end-end-radius: 10px;
     text-wrap: wrap;
     text-transform: capitalize;
 }
-.view_card .item_Name h6{
+
+.view_card .item_Name h6 {
     text-align: center;
     display: flex;
     align-items: center;
 }
-.subitemAdd{
+
+.subitemAdd {
     /* width: 100%; */
     display: flex;
     margin-left: 5px;
     font-size: 30px;
     color: rgb(201, 86, 4);
 }
-.subitemAdd:hover{
-color: tomato;
-cursor: pointer;
+
+.subitemAdd:hover {
+    color: tomato;
+    cursor: pointer;
 }
-@media(max-width:700px){
-    .veiw{
+
+@media(max-width:700px) {
+    .veiw {
         padding-top: 10px;
     }
 }

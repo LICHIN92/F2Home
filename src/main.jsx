@@ -24,6 +24,7 @@ import Orders from './pages/Orders/Orders'
 import Edit_Item from './pages/Edit_item/Edit_Item'
 import EditProduct from './pages/EditProduct/EditProduct'
 import About from './pages/about/About'
+import Users from './pages/Users/Users'
 
 // const user=useSelector(state=>state.user)
 const router = createBrowserRouter([
@@ -111,6 +112,14 @@ const router = createBrowserRouter([
         element: (
           <AuthAdmin>
             <EditProduct />
+          </AuthAdmin>
+        )
+      },
+        {
+        path: '/users',
+        element: (
+          <AuthAdmin>
+            <Users/>
           </AuthAdmin>
         )
       }

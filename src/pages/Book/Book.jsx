@@ -89,7 +89,7 @@ const Book = () => {
 
     return (
         <div className='Book'>
-         
+
             {book && (user ?
                 (isAddress ?
                     <ConfirmBooking selectedQuantity={quantity} Price={calculatePrice()}
@@ -102,10 +102,10 @@ const Book = () => {
             {
                 wait ?
                     <div className='book_item'>
-                           <div className="share">
-                <PiShareFat onClick={shareToWhatsApp} />
+                        <div className="share">
+                            <PiShareFat onClick={shareToWhatsApp} />
 
-            </div>
+                        </div>
                         <div className='itemDetail'>
                             <img src={data.Pic} alt={data.Name} />
                             <p className='itemPrice'>{data.Name}</p>
@@ -128,24 +128,35 @@ const Book = () => {
 
 
                         </div>
-                        {minQuan < maxQuan ?
+                        {
+                            !data.Availability  ?
+                                <>
+                                    <p className='outOfStock'>
+                                        <span>Not Available</span>
+                                    </p>
+                                </>
+                                :
 
-                            <>
-                                <div className='plusMinus'>
-                                    <Tooltips text={'Decrease Quantity'}><FaMinus onClick={decreaseFun} /></Tooltips>
-                                    {/* <FaMinus onClick={decreaseFun} /> */}
-                                    <Tooltips text={'Increase Quantity'}><FaPlus onClick={increaseFun} /></Tooltips>
+                                (minQuan < maxQuan ?
 
-                                </div>
-                                <div className='bookButtonDiv'>
-                                    <button onClick={() => setBook(true)}>Book Now</button>
-                                </div>
-                            </>
-                            :
-                            <p className='outOfStock'>
-                                <span>Out of Stock</span>
-                            </p>
+                                    <>
+                                        <div className='plusMinus'>
+                                            <Tooltips text={'Decrease Quantity'}><FaMinus onClick={decreaseFun} /></Tooltips>
+                                            {/* <FaMinus onClick={decreaseFun} /> */}
+                                            <Tooltips text={'Increase Quantity'}><FaPlus onClick={increaseFun} /></Tooltips>
+
+                                        </div>
+                                        <div className='bookButtonDiv'>
+                                            <button onClick={() => setBook(true)}>Book Now</button>
+                                        </div>
+                                    </>
+                                    :
+                                    <p className='outOfStock'>
+                                        <span>Out of Stock</span>
+                                    </p>
+                                )
                         }
+
 
                     </div> :
                     <p>please wait...</p>
