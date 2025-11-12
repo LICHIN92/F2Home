@@ -1,0 +1,40 @@
+.adminComfirmation{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 0,.5);
+    z-index: 100;
+    top: 0;
+    position: fixed;
+}
+.adminModal{
+    width: 350px;
+    height: 190px;
+    background-color: darkorchid;
+    padding-inline: 10px;
+    padding-top: 20px;
+}
+.adminModal h2{
+
+}
+.adminModal p{
+margin-top: 25px;
+}
+.adminModal div{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    width: 100%;
+    margin-top: 50px;
+    gap: 10px;
+    padding: 5px;
+    /* background-color: brown; */
+}
+
+.adminModal button{
+    width: 100px;
+    height: 30px;
+    cursor:pointer;
+}

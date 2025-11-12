@@ -11,8 +11,9 @@
 }
 
 .viewcardContainer {
-    width: 100%;
+    max-width: 100%;
     /* background-color: aqua; */
+    padding-inline: 15px;
     height: 78vh;
     display: flex;
     flex-wrap: wrap;
@@ -84,5 +85,17 @@
 @media(max-width:700px) {
     .veiw {
         padding-top: 10px;
+    }
+}
+
+@media(max-width:404px) {
+    .viewcardContainer {
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        max-width: 100vw;
+        column-gap: 15px;
+        padding-top: 0px;
+        margin-top: 0;
     }
 }
