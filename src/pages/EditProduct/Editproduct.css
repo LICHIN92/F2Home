@@ -1,6 +1,7 @@
 .editProduct {
     padding-top: 70px;
     padding-left: 10px;
+    
 }
 
 .editProduct .searchProductDiv {
@@ -94,6 +95,7 @@
     align-items: center;
     padding-top: 22px;
     gap: 20px;
+    padding-bottom: 20px;
 }
 
 .editFormDiv form {
@@ -110,7 +112,9 @@
     width: 220px;
     padding-left: 5px;
 }
-
+.delbutt{
+    padding-bottom: 20px;
+}
 @media(max-width:700px) {
     .editProduct {
         padding-top: 0px;

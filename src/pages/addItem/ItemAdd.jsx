@@ -5,6 +5,7 @@ import './addItem.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 const apiUrl = import.meta.env.VITE_API_URL;
+const token=localStorage.getItem('user')
 const ItemAdd = () => {
     const [selectedImage, setImage] = useState(null); // single image
     const [formdata, setFormData] = useState({});
@@ -28,6 +29,7 @@ const navigate =useNavigate()
             const response = await axios.post(`${apiUrl}/admin`, data, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
+                    Authorization:`Bearer ${token}`
                 },
             });
 

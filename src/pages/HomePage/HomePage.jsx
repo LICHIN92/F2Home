@@ -24,7 +24,7 @@ const HomePage = () => {
         const viewItem = async () => {
             try {
                 const item = await axios.get(`${apiUrl}`)
-                console.log(item);
+                // console.log(item);
                 setData(item.data.getItem)
                 setWait(false)
             } catch (error) {

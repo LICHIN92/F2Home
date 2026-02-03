@@ -14,7 +14,7 @@ const MyBooking = () => {
             try {
                 const res = await axios.get(`${apiUrl}/user/booking/${id}`) 
                 setOrder(res.data)
-                console.log(res.data); 
+                // console.log(res.data); 
 
             } catch (error) {
 

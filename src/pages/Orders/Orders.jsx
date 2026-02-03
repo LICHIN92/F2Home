@@ -18,7 +18,7 @@ const Orders = () => {
                 const res = await axios.get(`${apiUrl}/booking/orders`)
                 setOrders(res.data)
             } catch (error) {
-                console.log(error)
+                // console.log(error)
                 alert(error.response?.data || 'Error fetching orders')
             }
         }
@@ -45,7 +45,7 @@ const Orders = () => {
             const res = await axios.get(`${apiUrl}/booking/itemBooked/${itemId}`)
             setItemOrders(res.data)
         } catch (error) {
-            console.log(error)
+            // console.log(error)
             alert(error.response?.data || 'Error fetching item details')
         } finally {
             setLoading(false)
@@ -59,10 +59,10 @@ const Orders = () => {
             setLoadingDetails(true)
             const res = await axios.get(`${apiUrl}/booking/details/${name}`)
             setDetails(res.data)
-            console.log(res.data);
+            // console.log(res.data);
 
         } catch (error) {
-            console.log(error);
+            // console.log(error);
             alert(error.response?.data || "Error fetching details")
         } finally {
             setLoadingDetails(false)

@@ -39,12 +39,12 @@ const UserLogin = () => {
     e.preventDefault()
     try {
       const response = await axios.post(`${apiUrl}/user/login`, loginData);
-      console.log(response);
+      // console.log(response);
       alert(response.data.message)
       localStorage.setItem('user', response.data.token)
       reduxfunctions()
     } catch (error) {
-      console.log(error.response.data);
+      // console.log(error.response.data);
       alert(error.response.data)
 
     }
@@ -55,12 +55,12 @@ const UserLogin = () => {
 
     try {
       const response = await axios.post(`${apiUrl}/user`, formData);
-      console.log(response);
+      // console.log(response);
       alert(response.data.message)
       localStorage.setItem('user', response.data.token)
       reduxfunctions()
     } catch (error) {
-      console.log(error.response.data);
+      // console.log(error.response.data);
       alert(error.response.data)
     }
   }

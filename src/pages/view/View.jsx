@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux'
 
 const View = () => {
     const User = useSelector((state) => state.user?.user.User)
-    console.log(User);
+    // console.log(User);
 
     const navigate = useNavigate()
     const { item } = useParams()
@@ -22,7 +22,7 @@ const View = () => {
                 const res = await axios.get(`${apiUrl}/view/${item}`)
                 setWait(false)
 
-                console.log(res.data);
+                // console.log(res.data);
                 setData(res.data)
             } catch (error) {
                 console.log(error);
@@ -53,7 +53,7 @@ const View = () => {
                                         <h6>
                                             <LiaRupeeSignSolid />
 
-                                            {file.Price} /-Kg
+                                            {file.Price} / {item =='Ice Cream'? 'L': 'Kg'}
                                         </h6>
                                     </div>
                                 </div>

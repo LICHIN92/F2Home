@@ -10,7 +10,7 @@ const Navbars = () => {
   const [menuOpen, setMenuOpen] = useState(false)
   const token = localStorage.getItem('user')
   const user = useSelector((state) => state.user.user)
-  console.log(user);
+  // console.log(user);
 
   const navigate = useNavigate()
   useEffect(() => {

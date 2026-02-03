@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 const ConfirmBooking = ({ selectedQuantity, Price, image, cancel, Id, refresh }) => {
     const apiUrl = import.meta.env.VITE_API_URL;
     const user = useSelector((state) => state.user.user)
-    console.log(user.id);
+    // console.log(user.id);
     const data = { SelectedQuantity: selectedQuantity, Price: Price, Id: Id, User: user.id }
     const navigate = useNavigate()
     const Confirm = async () => {

@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form'
 import axios from 'axios'
 import BButton from '../../components/Button/BButton'
 import { useNavigate } from 'react-router-dom'
+import AdminConfirmation from '../../components/AdminCofirmation/AdminConfirmation'
 const EditProduct = () => {
   const { register, handleSubmit, reset } = useForm()
   const apiUrl = import.meta.env.VITE_API_URL;
@@ -11,14 +12,22 @@ const EditProduct = () => {
   const [selectedProduct, setselectedproduct] = useState(null)
   const [selected, setSelected] = useState(false)
   const navigate = useNavigate()
+  const token = localStorage.getItem('user')
+  const [modalOpen, setModalOpen] = useState(false)
   const search = async (data) => {
     if (!data.product) {
       alert('enter Product Name')
       return
     }
     try {
-      const res = await axios.post(`${apiUrl}/admin/SearchProduct`, data)
-      console.log(res.data);
+      const res = await axios.post(`${apiUrl}/admin/SearchProduct`, data,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
+      )
+      // console.log(res.data);
 
       setProduct(res.data)
 
@@ -48,7 +57,11 @@ const EditProduct = () => {
 
     try {
       setselectedproduct(null)
-      const res = await axios.put(`${apiUrl}/admin/editProduct`, data)
+      const res = await axios.put(`${apiUrl}/admin/editProduct`, data, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
       alert(res.data)
       navigate('/admin')
     } catch (error) {
@@ -56,8 +69,36 @@ const EditProduct = () => {
 
     }
   }
+  const DeleteProduct = async (id) => {
+    try {
+      const res = await axios.delete(`${apiUrl}/admin/deleteProduct/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
+      alert(res.data)
+      // navigate(0)
+      setselectedproduct(null)
+      setSelected(false)
+      setProduct([])
+      setModalOpen(false)
+      reset()
+    } catch (error) {
+      console.log(error);
+      alert(error.data)
+
+    }
+  }
   return (
     <div className='editProduct'>
+      {modalOpen &&
+        <AdminConfirmation cancel={setModalOpen}
+          heading={`Do you want to delete ${selectedProduct.Name}`}
+          quotes={'Are you sure ?'}
+          fun1={DeleteProduct}
+          id={selectedProduct._id}
+        />
+      }
       <h1>Edit Product</h1>
       <div className='searchProductDiv'>
         <form onSubmit={handleSubmit(search)} className='searchProductForm'>
@@ -127,9 +168,20 @@ const EditProduct = () => {
               <input type="number" {...register('Minimum')} Value={selectedProduct.Minimum} />
             </div>
             <div>
-              <BButton type='submit' Bcolor={'#8A2BE2'} color={'white'} name={'Submit'} bdrColor={''} />
+              <BButton type='submit' Bcolor={'#8A2BE2'} color={'white'} name={'Submit'} bdrColor={'darkgreen'} />
             </div>
           </form>
+          <div className='delbutt'>
+            <BButton
+              name={`Delete ${selectedProduct.Name}`}
+              onClick={() => setModalOpen(true)}
+
+              Bcolor="gray"
+              color="white"
+              bdrColor="red"
+              type="button"
+            />
+          </div>
 
         </div>
       }

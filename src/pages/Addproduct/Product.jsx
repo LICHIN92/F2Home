@@ -5,6 +5,7 @@ import axios from 'axios'
 import { useNavigate, useParams } from 'react-router-dom'
 import './product.css'
 const apiUrl = import.meta.env.VITE_API_URL;
+const token=localStorage.getItem('user')
 const Product = () => {
     const [formdata, setFormdata] = useState({})
     const [selectedImage, setImage] = useState(null)
@@ -33,13 +34,16 @@ const Product = () => {
         data.append('Price', formdata.Price);
         data.append('Stock', formdata.Stock)
         data.append('Minimum', formdata.Minimum)
-        if (formdata.Minimum > formdata.Stock) {
+        if (Number(formdata.Minimum) >Number( formdata.Stock)) {
+            alert('minimun'+formdata.Minimum +' '+'max'+ formdata.Stock)
+            alert(formdata.Minimum>formdata.Stock)
             return alert('Minimum must be less than Stoke')
         }
         try {
             const res = await axios.post(`${apiUrl}/admin/addProduct`, data, {
                 headers: {
-                    'Content-Type': 'multipart/form-data'
+                    'Content-Type': 'multipart/form-data',
+                    Authorization:`Bearer ${token}`
                 }
             });
             console.log(res);
@@ -81,7 +85,7 @@ const Product = () => {
                             value={formdata.Stock} onchange={handleChange} />
                     </div>
                     <div>
-                        <Inputz name={'Minimum'} label={'Minimum'} type={'Number'}
+                        <Inputz name={'Minimum'} label={'Minimum'} type={'number'}
                             value={formdata.Minimum} onchange={handleChange} />
                     </div>
                     <div className='imageshowdiv'>

@@ -9,9 +9,9 @@ const AdminConfirmation = ({ heading, fun1, id, cancel, quotes }) => {
         <div className=' adminComfirmation'>
 
             <div className='adminModal'>
-                <h2>{heading}</h2> <hr />
+                <h2>{heading}</h2> <hr className='lines' />
                 <p>{quotes}</p>
-                <hr />
+                <hr  className='lines'/>
                 <div>
 
 

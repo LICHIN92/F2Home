@@ -1,12 +1,15 @@
 import React from 'react'
 import './buton.css'
-const BButton = ({name,Bcolor,color,type,bdrColor,onclick}) => {
+const BButton = ({ name, Bcolor, color, type, bdrColor, onClick }) => {
   return (
     <div>
-        <button type={type} className='bttn' 
-        style={{backgroundColor:Bcolor,color:color,borderColor:bdrColor,onclick}}>
-            {name}
-            </button>
+      <button type={type} className='bttn'
+        style={{ backgroundColor: Bcolor, color: color, borderColor: bdrColor }}
+         onClick={onClick}>
+
+        {name}
+
+      </button>
     </div>
   )
 }

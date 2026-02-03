@@ -30,12 +30,12 @@ const PasswordChange = () => {
     }
     try {
       const res = await axios.post(`${apiUrl}/user/changePassword`, formData)
-      console.log(res.data);
+      // console.log(res.data);
       alert(res.data)
 navigate(-1)
     } catch (error) {
       alert(error.response.data)
-      console.log(error);
+      // console.log(error);
 
     }
   }

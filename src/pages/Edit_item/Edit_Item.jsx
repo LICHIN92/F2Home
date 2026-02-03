@@ -2,21 +2,29 @@ import { useForm } from 'react-hook-form'
 import './Edit_item.css'
 import React, { useState } from 'react'
 import axios from 'axios'
+import { useSelector } from 'react-redux'
 
 const Edit_Item = () => {
   const [data, setdata] = useState([])
   const [wait, setWait] = useState(false)
   const { register, handleSubmit } = useForm()
   const apiUrl = import.meta.env.VITE_API_URL;
-
+  const token = localStorage.getItem('user')
   const search = async (data) => {
+
     if (!data.item) {
       alert('Enter the Item ')
       return
     }
     setWait(true)
     try {
-      const find = await axios.post(`${apiUrl}/admin/searchItem`, data)
+      const find = await axios.post(`${apiUrl}/admin/searchItem`, data,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
+      )
       setdata(find.data)
     } catch (error) {
       console.log(error);
@@ -26,13 +34,23 @@ const Edit_Item = () => {
 
   const editSubmit = async (formData) => {
     console.log(formData);
+    console.log(token);
 
     try {
-      const payload={
-        id:data[0]._id,
-        newName:formData.NewName
+      const payload = {
+        id: data[0]._id,
+        newName: formData.NewName
       }
-      const res = await axios.put(`${apiUrl}/admin/EditItem`, payload)
+      const res = await axios.put(`${apiUrl}/admin/EditItem`, payload,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
+
+      alert(res.data);
+
+
     } catch (error) {
       console.log(error);
 

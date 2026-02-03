@@ -8,7 +8,7 @@ import { MdOutlineBookmarkBorder } from 'react-icons/md'
 import { TbLockPassword } from 'react-icons/tb'
 const Profile = () => {
   const user = useSelector(state => state.user.user)
-  console.log(user);
+  // console.log(user);
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const logOutFun = () => {

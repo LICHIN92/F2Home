@@ -7,14 +7,19 @@ const Users = () => {
     const apiUrl = import.meta.env.VITE_API_URL
     const [Users, setUsers] = useState([])
     const [view, setView] = useState(false)
-    const { register, handleSubmit,reset } = useForm()
+    const { register, handleSubmit, reset } = useForm()
     const [user, setuser] = useState(null)
     const [deleting, setDelete] = useState(false)
+    const token=localStorage.getItem('user')
     useEffect(() => {
 
         const user = async () => {
             try {
-                const useres = await axios.get(`${apiUrl}/admin/user`)
+                const useres = await axios.get(`${apiUrl}/admin/user`, {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                })
                 setUsers(useres.data)
             } catch (error) {
                 console.log(error);
@@ -22,7 +27,7 @@ const Users = () => {
             }
         }
         user()
-    }, [])
+    }, [token])
 
     const finduser = async (data) => {
         setuser(null)
@@ -34,6 +39,9 @@ const Users = () => {
         try {
             const res = await axios.get(`${apiUrl}/admin/findUser`, {
                 params: { mobile: data.mobile },
+                 headers:{
+                    Authorization:`Bearer ${token}`
+                }
             });
             console.log(res);
             setuser(res.data)
@@ -49,7 +57,10 @@ const Users = () => {
         // alert(id)
         try {
             const res = await axios.delete(`${apiUrl}/admin/deleteUser`, {
-                params: { id: id }
+                params: { id: id },
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
             })
             setDelete(false)
             alert(res.data)

@@ -21,7 +21,7 @@ const MobileChange = () => {
             return
         };
         setClicked(true)
-        console.log(formdata);
+        // console.log(formdata);
 
         if (formdata.NewMobile !== formdata.ConfirmMobile) {
             alert("New Mobile and Confirm Mobile do not match!");
@@ -35,7 +35,7 @@ const MobileChange = () => {
             navigate('/profile')
 
         } catch (error) {
-            console.log(error);
+            // console.log(error);
             setClicked(false)
             alert(error.response.data)
         }

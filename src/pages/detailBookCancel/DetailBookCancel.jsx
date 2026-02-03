@@ -6,13 +6,13 @@ import Modall from '../../components/modal/Modall';
 const DetailBookCancel = () => {
     const location = useLocation();
     const { data } = location.state || {};
-    console.log(data)
+    // console.log(data)
     const [opened, setOpen] = useState(false)
     const datefun = () => {
         let a = data.createdAt
         let dateObj = new Date(a);
 
-        console.log(dateObj.toString().split(' ')[3]);
+        // console.log(dateObj.toString().split(' ')[3]);
         return dateObj.toDateString()
     }
     return (

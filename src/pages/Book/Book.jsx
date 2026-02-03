@@ -23,7 +23,10 @@ const Book = () => {
     const [minQuan, SetMin] = useState(null)
     const [refresh, setRefresh] = useState(false)
     const isAddress = useSelector((state) => state.user.user.IsAddress)
-    console.log(isAddress);
+    // console.log(isAddress);
+    const isIceCream = data?.Item === 'Ice Cream'
+    // console.log(isIceCream);
+
     const user = localStorage.getItem('user')
     const navigate = useNavigate()
 
@@ -45,7 +48,7 @@ const Book = () => {
                 setMax(res.data.Stock)
                 setImage(res.data.Pic)
                 SetMin(res.data.Minimum)
-                console.log(res.data);
+                // console.log(res.data);
 
             } catch (error) {
                 console.log(error)
@@ -111,14 +114,19 @@ const Book = () => {
                             <p className='itemPrice'>{data.Name}</p>
                             <p className='itemPrice'>
                                 <LiaRupeeSignSolid />
-                                {data.Price} / Kg
+                                {data.Price} / {data.Item == 'Ice Cream' ? "L" : "Kg"}
                             </p>
                         </div>
                         <div className='priceValueBox'>
                             <div className='priceValueBox'>
 
                                 <span>{quantity >= 1000 ? quantity / 1000 : quantity}
-                                    {quantity >= 1000 ? 'Kg' : 'g'}</span>
+                                    {quantity >= 1000 ?
+                                        (isIceCream?" L":' Kg')
+                                        :
+                                       (isIceCream?" ml":' g')
+                                        }
+                                </span>
                                 <span className='pricevalue'>
                                     <LiaRupeeSignSolid /> {calculatePrice()}
                                 </span>
@@ -129,7 +137,7 @@ const Book = () => {
 
                         </div>
                         {
-                            !data.Availability  ?
+                            !data.Availability ?
                                 <>
                                     <p className='outOfStock'>
                                         <span>Not Available</span>
